@@ -90,7 +90,7 @@ public class CustomerDialog extends JDialog implements ActionListener {
 		customerTablePanel.add(sp, BorderLayout.CENTER);
 
 		Table.addMouseListener(new MouseAdapter() {
-			@Override
+//			@Override
 			public void mousePressed(MouseEvent e) {
 				int row = Table.rowAtPoint(e.getPoint());
 

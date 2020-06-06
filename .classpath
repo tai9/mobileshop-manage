@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Self Learning/JAVA/JavaSwing/MobileShopMS/lib/sqljdbc42.jar"/>
+	<classpathentry kind="lib" path="Lib/sqljdbc42.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
