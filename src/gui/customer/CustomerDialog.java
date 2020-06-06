@@ -8,6 +8,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -86,6 +88,22 @@ public class CustomerDialog extends JDialog implements ActionListener{
 		Table.setModel(model);
 		JScrollPane sp = new JScrollPane(Table);
 		customerTablePanel.add(sp, BorderLayout.CENTER);
+		Table.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				int row = Table.rowAtPoint(e.getPoint());
+				Table.getSelectionModel().setSelectionInterval(row,row);
+				if(e.getButton()== MouseEvent.BUTTON1) {
+//					Customer cus =  model.getCustomerAt(row);
+//					CustomerFormEvent event = new CustomerFormEvent(this, cus.getId(), cus.getName(),
+//							cus.getBirthYear(), cus.getSex(), cus.getPhoneNumber(), cus.getAddress());
+//					idTextField.setText(cus.getId()+"");
+//					nameTextField.setText(cus.getName());
+					System.out.println("fdhmbjbjh");
+				}
+			}
+		});
+		
+		
 //* c. Xữ lý phần TextField - Label
 		idLbl = new JLabel("ID");
 		gbc.gridx = 0;
@@ -193,7 +211,10 @@ public class CustomerDialog extends JDialog implements ActionListener{
 		}
 		
 		if(btn == removeBtn) {
-			CustomerTableModel1 model = (CustomerTableModel1)Table.getModel();
+			
+		}
+		
+		if(btn == editBtn) {
 			
 		}
 		
