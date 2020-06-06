@@ -17,7 +17,7 @@ public class CustomerTableModel1 extends AbstractTableModel {
 		customerList = new ArrayList<Customer>();
 	}
 	
-	// truyền dữ liệu 
+	// truyá»�n dá»¯ liá»‡u 
 	public void setData(List<Customer> customer) {
 		this.customerList = customer;
 	}
@@ -63,5 +63,8 @@ public class CustomerTableModel1 extends AbstractTableModel {
 		return columnName[column];
 	}
 	
+	public Customer getCustomerAt(int row) {
+		return customerList.get(row);
+	}
 	
 }
