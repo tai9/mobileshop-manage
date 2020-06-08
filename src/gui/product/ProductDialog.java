@@ -27,7 +27,7 @@ import javax.swing.table.TableModel;
 
 import model.Product;
 
-public class ProductDialog extends JDialog {
+public class ProductDialog extends JDialog{
 
 	private JPanel productFormPanel;
 	private JPanel productTablePanel;
@@ -204,7 +204,6 @@ public class ProductDialog extends JDialog {
 		String colunm[] = { "ID", "Name Product", "Category", "Price", "Amount", "Description" };
 		TableModel tableModel = new DefaultTableModel(data, colunm);
 		jtable = new JTable(tableModel);
-
 		JScrollPane scpJtable = new JScrollPane(jtable);
 		productTablePanel.add(scpJtable);
 
@@ -217,7 +216,6 @@ public class ProductDialog extends JDialog {
 	}
 
 	private void addBtnActionPerformed(ActionEvent e) {
-		
 		String name = nameProductTxt.getText();
 		String category = categorycbb.getSelectedItem().toString();
 		int price = 0;
@@ -263,6 +261,7 @@ public class ProductDialog extends JDialog {
 		Product product = new Product(name, category, price, amount, description);
 		list.add(product);
 		showResult();
+		JOptionPane.showMessageDialog(rootPane, "Add data successfully!!!");
 	}
 
 	private void removeBtnActionPerformed(ActionEvent e) {
@@ -270,7 +269,7 @@ public class ProductDialog extends JDialog {
 	}
 
 	private void updateBtnActionPerformed(ActionEvent e) {
-
+		
 	}
 
 	private void clearBtnActionPerformed(ActionEvent e) {
@@ -280,5 +279,6 @@ public class ProductDialog extends JDialog {
 		amountTxt.setText("");
 		descriptionTxtArea.setText("");
 	}
-
+	
+	
 }

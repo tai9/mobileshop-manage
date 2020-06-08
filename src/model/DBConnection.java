@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 public class DBConnection {
-		public static final String url = "jdbc:sqlserver://localhost;databaseName=MobileShopManagementttt;user=sa;password=123";
+		public static final String url = "jdbc:sqlserver://localhost;databaseName=MobileShopManagementttt;user=sa;password=123456";
 		Connection con = null;
 
 		public Connection getConnection() throws ClassNotFoundException {
