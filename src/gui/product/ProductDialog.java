@@ -10,6 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -25,6 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+import DAO.ProductDAO;
 import model.Product;
 
 public class ProductDialog extends JDialog {
@@ -53,6 +55,8 @@ public class ProductDialog extends JDialog {
 
 	private ArrayList<Product> list;
 	DefaultTableModel model;
+	
+	private ProductDAO productDAO;
 
 	public ProductDialog() {
 		initConponents();
@@ -207,6 +211,13 @@ public class ProductDialog extends JDialog {
 
 		JScrollPane scpJtable = new JScrollPane(jtable);
 		productTablePanel.add(scpJtable);
+		
+		// load list product
+		productDAO = new ProductDAO();
+		List<Product> productList = productDAO.getAll();
+		for(Product p : productList) {
+			System.out.println(p);
+		}
 
 	}
 	
@@ -263,14 +274,16 @@ public class ProductDialog extends JDialog {
 		Product product = new Product(name, category, price, amount, description);
 		list.add(product);
 		showResult();
+		
+		productDAO.add(product);
+		System.out.println(product);
 	}
 
 	private void removeBtnActionPerformed(ActionEvent e) {
-		
 	}
 
 	private void updateBtnActionPerformed(ActionEvent e) {
-
+		
 	}
 
 	private void clearBtnActionPerformed(ActionEvent e) {

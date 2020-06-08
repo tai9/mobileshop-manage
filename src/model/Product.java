@@ -9,7 +9,8 @@ public class Product {
 	private int amount;
 	private String description;
 
-	
+	public Product() {
+	}
 
 	public Product(int idProduct, String nameProduct, String category, int price, int amount, String description) {
 		this.idProduct = idProduct;
@@ -32,7 +33,9 @@ public class Product {
 		count++;
 	}
 
-
+	public void setIdProduct(int id) {
+		this.idProduct = id;
+	}
 
 	public int getIdProduct() {
 		return idProduct;
@@ -76,6 +79,11 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	@Override
+	public String toString() {
+		return this.idProduct + " " + this.nameProduct;
 	}
 
 }
